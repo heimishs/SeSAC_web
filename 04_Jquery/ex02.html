@@ -1,0 +1,66 @@
+<html>
+  <head>
+    <!-- TODO1: jQuery CDN 불러오기 -->
+    <style>
+      div {
+        width: 100;
+        height: 100;
+      }
+
+      div:hover {
+        cursor: pointer;
+      }
+
+      .red {
+        background-color: red;
+      }
+
+      .orange {
+        background-color: orange;
+      }
+
+      .yellow {
+        background-color: yellow;
+      }
+
+      .green {
+        background-color: green;
+      }
+
+      .blue {
+        background-color: blue;
+      }ㄴ
+
+      .purple {
+        background-color: purple;
+      }
+    </style>
+     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script> 
+     <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.min.js" integrity="sha256-AlTido85uXPlSyyaZNsjJXeCs07eSv3r43kyCVc8ChI=" crossorigin="anonymous"></script>
+    <script>
+      let colors = ['red', 'orange', 'yellow', 'green', 'blue', 'purple'];
+
+      // TODO2: changeColor 함수 내부 작성
+      function changeColor() {
+        let rand = Math.floor(Math.random() * 5)
+        if(!$('div').hasClass(colors[rand])){
+          // div 클래스명이 현재 값과 틀릴때
+          $('div').switchClass($('div').attr('class'), colors[rand], 300)
+        }else{
+          // div 클래스명이 현재 값과 맞을때
+          for(let i = 0; i < colors.length; i++){
+            if($('div').attr('class') !== colors[i]){
+              // div 같은 클래스가 안나올때까지 순환 다르면 멈춤
+              $('div').switchClass($('div').attr('class'), colors[i], 300)
+              break;
+            }
+          }
+        }
+      }
+    </script>
+  </head>
+
+  <body>
+    <div class="red" onclick="changeColor();"></div>
+  </body>
+</html>

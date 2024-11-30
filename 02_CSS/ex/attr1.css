@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&display=swap');
+@font-face {
+    font-family: 'Mungyeong-Gamhong-Apple';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2410-2@1.0/Mungyeong-Gamhong-Apple.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'GumiRomanceTTF';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2410-1@1.0/GumiRomanceTTF.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+.font-link{
+    font-family: "Gowun Batang", serif;
+}
+
+.font-import{
+    font-family: "Gowun Batang", serif;
+}
+
+.noonnu_font{
+    font-family: 'Mungyeong-Gamhong-Apple', serif;
+}
+
+.container{
+    background-color: gold;
+    /* 글자색은 기본적으로 상속됨 케스케이딩 */
+    color: gray;
+}
+
+.container a{
+    color: gray;
+    text-decoration: none;
+
+    /* 색상지정방법 */
+    /* 색상이름으로 지정하는 방법 */
+    /* RGB 함수를 사용 (255,255,255,0.5) */
+    /* #000000 웹색상코드 사용 16진수 */
+}
+
+.container > .sentences{
+    /* 폰트 굵기 */
+    font-weight: 700;
+    font-size: 16px;
+    text-align: center;
+    /* text-decoration: line-through; */
+    line-height: 1;
+    line-height: 1;
+}
+
+.test{
+    width: 100px;
+    height: 100px;
+    background-color: greenyellow;
+
+    /* 한줄일때는 세로기준 가운데 정렬 사용한다 */
+    line-height: 100px;
+    text-align: center;
+}

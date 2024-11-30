@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>선택자3 - 가상클래스, 가상요소 선택자</title>
+    <style>
+        .div1{
+            width: 100px;
+            height: 100px;
+            background-color: skyblue;
+            text-align: center;
+            line-height: 100px;
+        }
+
+        /* 1. 가상클래스 선택자 */
+        /* 1-1 동작과 관련된 선택자: hover, active, focus, visited */
+        /* 
+            E:active{} 요소에 마우스 클릭또는 키보드 엔터가 눌리는 동안 만 선택
+            E:hover{} 요소에 마우스가 올라가 있는 동안만 선택
+            E:focus{} 요소애 포커스가 머물러 있는 동안(input, textare..)
+            E:visited{} 요소가 링크일때, 해당 링크에 방문한적 있을때 선택
+            E:cheaked{} 요소가 체크 되었을때 (input-radui, cheakbox)
+        */
+
+        .div1:hover{
+            background-color: blue;
+            height: 150px;
+        }
+
+        .div1:active{
+            background-color: purple;
+            width: 150px;
+        }
+
+        input:focus{
+            background-color: palegreen;
+            color: purple;
+            outline: aqua;
+        }
+
+        .links > a{
+            font-size: 20px;
+        }
+
+        .links > a:hover{
+            background-color: palevioletred;
+        }
+
+        .links > a:active{
+            background-color: magenta;
+        }
+
+        .links > a:visited{
+            color: greenyellow;
+        }
+
+        /* 
+        1-2 요소의 상황과 관련된 선택자
+        E:first-child() 첫째 자식이라면 선택
+        E:last-child() 막내자식이라면 선택
+        E:nth-child(n) n번째 자식이라면 선택
+        E:not-child(xyz) 요소 중에서 xyz가 아닌 것 선택
+        */
+
+        .zoo > * {
+            /* zoo 의 자식 모두 선택 */
+            background-color: green;
+            color: #fff;
+            font-size: 14px;
+        }
+
+        /* zoo 클래스에서 판다만 바꾸기 */
+        .zoo > li:last-child{
+            background-color: black;
+        }
+
+        .zoo > *:first-child{
+            background-color: yellowgreen;
+        }
+
+        /* even, odd: 짝수, 홀수 */
+        .zoo > li:nth-child(2n){
+            background-color: pink;
+        }
+
+        .zoo > *:not(div){
+            background-color: aqua;
+        }
+
+        /* 가상요소 선택자 */
+        .div2{
+            background-color: cadetblue;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .div2::after{
+            content: 'after';
+            background-color: red;
+            color: #fff;
+        }
+
+        .div2::before{
+            content: '';
+            background-color: green;
+            display: inline-block;
+            width: 10px;
+            height: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 가상클래스 선택자 hover, active -->
+    <div class="div1">
+        <span>
+            <div>div1</div>
+        </span>
+    </div>
+
+    <!-- 가상클래스 선택자 focus, active, hover -->
+     <input type="text" />
+     <div class="links">
+        <a href="https://naver.com">네이버</a>
+        <a href="https://google.com">구글</a>
+        <a href="https://googleㄴ.com">미방문</a>
+     </div>
+
+     <hr>
+     <ul class="zoo">
+        <h1>동물원입니다</h1>
+        <div>원숭이</div>
+        <li>lion</li>
+        <li>rabbit</li>
+        <li>tiger</li>
+        <li>elephant</li>
+        <li>puppy</li>
+        <div>코알라</div>
+        <li>panda</li>
+     </ul>
+
+     <!-- 가상 요소 선택자 -->
+      <div class="div2">가상요소 선택자</div>
+</body>
+</html>

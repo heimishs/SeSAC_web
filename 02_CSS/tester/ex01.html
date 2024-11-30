@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>실습1</title>
+    <style>
+        .box{
+    width: auto;
+    height: 200px;
+    background-color: orange;
+    }
+
+    .box > div:first-child{
+        display: inline-block;
+        width: 200px;
+        height: 100px;
+        margin-right: 30px;
+        background-color: skyblue;
+    }
+
+    .box > div:nth-child(2){
+        display: inline-block;
+        width: 200px;
+        height: 100px;
+        margin-right: 30px;
+        background-color: green;
+    }
+
+    .box > div:last-child{
+        display: inline-block;
+        width: 200px;
+        height: 100px;
+        margin-right: 30px;
+        background-color: red;
+    }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div>HTML</div>
+        <div >CSS</div>
+        <div>Javascript</div>
+    </div>
+</body>
+</html>

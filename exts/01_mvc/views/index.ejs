@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- axios cdn -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <style>
+      .form {
+        width: 400px;
+        margin: 0 auto;
+        margin-top: 100px;
+        border: 1px solid #000;
+        padding: 30px;
+      }
+      .error {
+        font-weight: bold;
+        color: red;
+        font-size: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="form">
+      <form name="login" method="post">
+        <label>
+          <span>아이디</span>
+          <input name="id" type="text" required />
+        </label>
+        <br />
+        <label>
+          <span>비밀번호</span>
+          <input name="pw" type="password" value="" required />
+        </label>
+        <br />
+        <button type="button" onclick="login_auth()">로그인</button>
+      </form>
+      <div>
+        <p></p>
+      </div>
+    </div>
+    <script>
+      function login_auth() {
+        const form = document.forms["login"]; //폼 선택
+        const data = {
+          id: form.id.value,
+          pw: form.pw.value,
+        };
+
+        const result = document.querySelector("p");
+
+        axios({
+          method: "post",
+          url: "/auth",
+          data: data,
+        }).then(function (res) {
+          console.log(res.data);
+          console.log(res.data.auth);
+          console.log(result);
+          if (res.data.auth) {
+            result.innerText = "로그인 성공!";
+            result.classList.remove("error");
+          } else {
+            result.innerText = "아이디 또는 패스워드 오류!";
+            result.classList.add("error");
+          }
+        });
+      }
+    </script>
+  </body>
+</html>

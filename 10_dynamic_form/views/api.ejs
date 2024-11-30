@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>외부 API 사용</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <h1>간단 open API 사용하기</h1>
+
+    <h3>고양이 사진 바꾸기</h3>
+    <img src="" id="img" alt="기본이미지" />
+    <button onclick="changeCatImg();">고양이 사진 변경</button>
+
+    <h3>영화 정보 가져오기</h3>
+    <ul>
+      <div>
+        <img src="" alt="" />
+        <p>영화제목</p>
+      </div>
+    </ul>
+    <script>
+      // https://api.thecatapi.com/v1/images/search
+      function changeCatImg() {
+        fetch("https://api.thecatapi.com/v1/images/search")
+          .then(function (res) {
+            return res.json();
+          })
+          .then(function (data) {
+            console.log(data[0].url);
+            const img = document.getElementById("img");
+            img.src = data[0].url;
+            img.alt = `${data[0].id}-cat-img`;
+            img.width = 400;
+          });
+      }
+      const word = "love";
+
+      axios({
+        method: "get",
+        url: "http://www.omdbapi.com/?apikey=2e2df2bd&s=" + word,
+      }).then(function (res) {
+        const cont = document.querySelector("ul");
+
+        for (let movie of res.data.Search) {
+          //   console.log(movie.Title);
+          //   console.log(movie.Poster);
+          //   console.log(movie.imdbID);
+          const div = document.createElement("div");
+          const img = document.createElement("img");
+          const p = document.createElement("p");
+
+          img.src = movie.Poster;
+          img.alt = movie.imdbID + "무비 이미지";
+
+          p.innerText = movie.Title;
+          div.append(img, p);
+          cont.append(div);
+        }
+      });
+
+      //   http://www.omdbapi.com/?apikey=[yourkey]&
+      //   http://www.omdbapi.com/?i=tt3896198&apikey=18a4b241
+    </script>
+  </body>
+</html>

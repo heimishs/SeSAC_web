@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const word1 = "abc"
+        const word2 = "xyz"
+
+        let arr = [...word1,...word2]
+        // console.log(arr)
+
+        class Shape{
+            constructor(width,height){
+                this.width = width;
+                this.height = height;
+            }
+
+            getArea(){
+                return this.width * this.height
+            }
+        }
+
+        let rec1 = new Shape(3,4)
+        // console.log(rec1.getArea())
+
+        class Rectangle extends Shape{
+            constructor(width,height){
+                super(width,height);
+            }
+
+            getArea(){
+                return Math.sqrt(this.width ** 2 + height ** 2)
+            }
+        }
+
+        class Triangle extends Shape{
+            constructor(width,height){
+                super(width, height)
+            }
+
+            getArea(){
+                return this.width * this.height * 0.5;
+            }
+        }
+
+        let tri1 = new Triangle(3,4)
+        // console.log(tri1.getArea())
+
+        class Circle extends Shape{
+            constructor(width, height){
+                super(width,height)
+            }
+
+            getArea(){
+                let one = this.width / 2
+                return console.log(one ** 2 * Math.PI)
+            }
+        }
+
+        let cir1 = new Circle(3,4)
+        // console.log(circle1.getArea())
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

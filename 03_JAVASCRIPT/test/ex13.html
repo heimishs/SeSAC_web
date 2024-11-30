@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>방명록 만들기</title>
+  </head>
+  <body>
+    <h1>여기는 방명록!!</h1>
+    <form>
+      <label for="writer">작성자</label>
+      <input type="text" id="writer" autocomplete="off" />
+      <br />
+      <br />
+
+      <label for="content">내용</label>
+      <input type="text" id="content" style="width: 500px" autocomplete="off" />
+      <br />
+      <br />
+
+      <button type="button" onclick="writeNote();">등록</button>
+    </form>
+
+    <br />
+    <br />
+
+    <table id="table" border="1" cellpadding="10" cellspacing="1">
+      <tr>
+        <th>작성자</th>
+        <th>내용</th>
+        <th>작성일</th>
+      </tr>
+      <!-- 
+        코드 추가 예시
+        <tr>
+          <td>홍길동</td>
+          <td>하이</td>
+          <td>2022-10-05 12:34</td>
+        </tr>
+      -->
+    </table>
+
+    <script>
+      // TODO: practice14_설명.png 이미지의 조건을 만족하는 js 코드 작성
+      // writeNote() 함수를 미리 정의해두었습니다.
+
+      // [등록] 버튼 클릭시 writeNote() 함수가 실행되도록 인라인 방식으로 미리 설정해 두었습니다.
+<<<<<<< HEAD
+      function writeNote() {
+        const table = document.getElementById('table')
+        const tr = document.createElement('tr')
+        const td1 = document.createElement('td')
+        const td2 = document.createElement('td')
+        const td3 = document.createElement('td')
+
+        let user = document.querySelector('#writer')
+        let content = document.querySelector('#content')
+        let date = new Date()
+
+        td1.textContent = user.value
+        td2.textContent = content.value
+        td3.textContent = `${date.getFullYear()}-${date.getMonth()}-${date.getDate()} ${date.getHours()}:${date.getMinutes()}`
+        tr.appendChild(td1)
+        tr.appendChild(td2)
+        tr.appendChild(td3)
+        table.appendChild(tr)
+
+        user.value = ""
+        content.value = ""
+=======
+
+      let user = document.querySelector('#writer')
+      let content = document.querySelector('#content')
+      let table = document.querySelector('#table')
+
+
+      function writeNote() {
+        let tr = document.createElement('tr')
+        let td = document.createElement('td')
+        
+        table.after(table);
+
+>>>>>>> 5a229d4fc1a30753e5359f64216a2ca2433314e1
+      }
+    </script>
+  </body>
+</html>

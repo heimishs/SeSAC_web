@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>실습 19</title>
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: skyblue;
+            border: 1px solid #000;
+            transition: all 1s ease;
+        }
+
+        .box1:hover{
+            width: 300px;
+        }
+
+        .box2:hover{
+            transform: skew(-45deg,0) translateX(50px);
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="box box1"></div>
+    <div class="box box2"></div>
+    <div class="box box3"></div>
+    <div class="box box4"></div>
+</body>
+</html>

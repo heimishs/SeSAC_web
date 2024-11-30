@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>선택자1 - 기본선택자</title>
+    <style>
+        /* 기본선택자: 전체선택자, 태그선택자, 클래스 선택자, 아이디 선택자 */
+
+        /* 전체선택자: 모든태그를 선택 */
+        *{
+            color: gray;
+        }
+
+        /* 2. 태그선택자: 태그이름 써주기 */
+        li{
+            background-color: pink;
+            color: blue;
+        }
+
+        h3{
+            background-color: black;
+            color: #fff;
+            text-align: center;
+            letter-spacing: 10px;
+        }
+
+        span{
+            font-size: 50px;
+            font-weight: bold;
+        }
+
+        /* 클래스 선택자 */
+        /* 클래스 선택자는 전체선택자나 태그선택자보다 우선순위가 높다 */
+        .small{
+            background-color: palevioletred;
+
+        }
+
+        .big{
+            background-color: orange;
+        }
+
+        /* id선택자 */
+        /* 선택자 우선순위 아이디 > 클래스 > 태그 > 전체선택자 순서이다 */
+        /* 같은 우선순위의 선택자라면 뒤에 선언된 스타일적용 */
+        p{
+            background-color: red;
+        }
+        #pTag{
+            background-color: skyblue;
+        }
+        .p-class{background-color: red;}
+    </style>
+</head>
+<body>
+    <ul>
+        <li class="small">쥐</li>
+        <li class="big">소</li>
+        <li class="big">호랑이</li>
+        <li class="small">토끼</li>
+
+        <h3>어흥</h3>
+        <p id="pTag" class="p-class">p tag</p>
+        <span>span tag</span>
+    </ul>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        width: 100%;
+        height: 100%;
+        margin: 0px;
+        background-image: url('../overwatch/bg.jpg');
+        background-size:cover;
+        background-repeat: no-repeat;
+    }
+    
+    .container{
+        width: 1400px;
+        margin: auto;
+    }
+
+    .items{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: 100px 0px;
+    }
+
+    .item{
+        display: inline-block;
+        background-color: gray;
+        border: 4px solid #fff;
+        border-radius: 10px;
+        font-size: 0px;
+        transform: skewX(-10deg);
+        transition: all 0.5s;
+        box-sizing: border-box;
+        margin: 4px;
+        overflow: hidden;
+    }
+
+    .item img{
+        transform: skewX(10deg);
+    }
+
+    .item:hover{
+        transform: skewX(-10deg) scale(1.2);
+        background-color: orange;
+        z-index: 5;
+    }
+
+    .logo{
+        width: 600px;
+        margin: 0 auto;
+    }
+
+    .logo > img{
+        width: 100%;
+    }
+</style>
+<body>
+    <div class="container">
+        <div class="items">
+            <div class="item"><img src="../overwatch/hero1.png" alt="아나"></div>
+            <div class="item"><img src="../overwatch/hero2.png" alt="애쉬"></div>
+            <div class="item"><img src="../overwatch/hero3.png" alt="바스티스"></div>
+            <div class="item"><img src="../overwatch/hero4.png" alt="바스티온"></div>
+            <div class="item"><img src="../overwatch/hero5.png" alt="브리기테"></div>
+            <div class="item"><img src="../overwatch/hero6.png" alt="디바"></div>
+            <div class="item"><img src="../overwatch/hero7.png" alt="둠피"></div>
+            <div class="item"><img src="../overwatch/hero8.png" alt="에코"></div>
+            <div class="item"><img src="../overwatch/hero9.png" alt="겐지"></div>
+            <div class="item"><img src="../overwatch/hero10.png" alt="한조"></div>
+            <div class="item"><img src="../overwatch/hero11.png" alt="정크렛"></div>
+            <div class="item"><img src="../overwatch/hero12.png" alt="루시우"></div>
+            <div class="item"><img src="../overwatch/hero13.png" alt="맥크리"></div>
+            <div class="item"><img src="../overwatch/hero14.png" alt="메이"></div>
+            <div class="item"><img src="../overwatch/hero15.png" alt="메르시"></div>
+            <div class="item"><img src="../overwatch/hero16.png" alt="모이라"></div>
+            <div class="item"><img src="../overwatch/hero17.png" alt="오리사"></div>
+            <div class="item"><img src="../overwatch/hero18.png" alt="파라"></div>
+            <div class="item"><img src="../overwatch/hero19.png" alt="리퍼"></div>
+            <div class="item"><img src="../overwatch/hero20.png" alt="라인"></div>
+            <div class="item"><img src="../overwatch/hero21.png" alt="호그"></div>
+            <div class="item"><img src="../overwatch/hero22.png" alt="시그마"></div>
+            <div class="item"><img src="../overwatch/hero23.png" alt="솔저"></div>
+            <div class="item"><img src="../overwatch/hero24.png" alt="솜브라"></div>
+            <div class="item"><img src="../overwatch/hero25.png" alt="시매트라"></div>
+            <div class="item"><img src="../overwatch/hero26.png" alt="토르비온"></div>
+            <div class="item"><img src="../overwatch/hero27.png" alt="트레이서"></div>
+            <div class="item"><img src="../overwatch/hero28.png" alt="위도우"></div>
+            <div class="item"><img src="../overwatch/hero29.png" alt="윈스턴"></div>
+            <div class="item"><img src="../overwatch/hero30.png" alt="레킹볼"></div>
+            <div class="item"><img src="../overwatch/hero31.png" alt="자리아"></div>
+            <div class="item"><img src="../overwatch/hero32.png" alt="젠야타"></div>
+        </div>
+        <div class="logo">
+            <img src="../overwatch/logo_overwatch.png" alt="오버워치">
+        </div>
+    </div>
+</body>
+</html>

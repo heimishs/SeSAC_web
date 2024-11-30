@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        // 배열 100개만들고 합구하기
+        /*
+        let arr = [];
+        let sum1 = 0;
+
+        for(let i = 0; i < 100; i++){
+            arr.push(i);
+            sum1 += arr[i];
+        }
+
+        let sum2 = 0;
+        for(let item in arr){
+            sum2 += Number(item)
+        }
+
+        let sum3 = 0;
+        arr.forEach((num) => {
+            sum3 += num
+        });
+        */
+
+        // 주말 평일 구하기
+        /*
+        let now = new Date()
+
+        if(now.getDay() === 0 || now.getDay() === 6){
+            console.log("주말입니다")
+        }else
+        {
+            console.log("평일입니다")
+        }
+        */
+
+        /*
+        let i = 0;
+        while(i < 100){
+            i++
+            console.log(Math.round(Math.random()*10)) // 0~9까지의 소수가 아닌 난수 
+        }
+        */
+
+        let fruits1 = ["사과","딸기","파인애플","수박","참외","오렌지","자두","망고"];
+        let fruits2 = ["수박","사과","참외","오렌지","파인애플","망고"];
+
+        let sane = []
+        let diff = []
+
+        for(let i = 0; i < fruits1.length; i++){
+
+            for(let j = 0; j < fruits2.length; j++){
+
+                if(fruits2.includes(fruits1[i]))
+                {
+                    sane.push(fruits2[i])
+                    
+                    break;
+                }
+                else
+                {
+                    diff.push(fruits1[i])
+                    break
+                }
+            }
+        }
+        
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

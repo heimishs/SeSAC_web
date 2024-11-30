@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/6dd6eb0895.js" crossorigin="anonymous"></script>
+    <style>
+
+        .cont{
+            display: flex;
+        }
+        
+        .cont .box{
+            width: 150px;
+            height: 150px;
+            background-color: black;
+            margin: 10px;
+            border-radius: 10px;
+            border: 1px solid red;
+            
+        }
+
+        @media screen and (max-width:700px) {
+            .cont{
+                display: block;
+            }
+        
+            .cont .box{
+                background-color: skyblue;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="cont">
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+    </div>
+    
+</body>
+</html>

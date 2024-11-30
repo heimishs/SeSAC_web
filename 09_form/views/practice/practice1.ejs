@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>practice1</title>
+  </head>
+  <body>
+    <h1>실습문제1</h1>
+    <form action="/practice_result" method="get">
+      <label
+        >이름
+        <input type="text" name="name" required />
+      </label>
+      <fieldset>
+        <legend>성별</legend>
+        <label> <input type="radio" name="gender" value="남자" />남자 </label>
+        <label> <input type="radio" name="gender" value="여자" />여자 </label>
+      </fieldset>
+      <fieldset>
+        <legend>생년월일</legend>
+        <label>
+          <select name="year" id="">
+            <% for(let i = 2010; i <= 2030; i++) {%>
+            <option><%=i%>년</option>
+            <%}%>
+          </select>
+        </label>
+        <label>
+          <select name="mon" id="">
+            <% for(let i = 1; i <= 12; i++) {%>
+            <option><%=i%>월</option>
+            <%}%>
+          </select>
+        </label>
+        <label>
+          <select name="day" id="">
+            <% for(let i = 1; i <= 30; i++) {%>
+            <option><%=i%>일</option>
+            <%}%>
+          </select>
+        </label>
+      </fieldset>
+      <fieldset>
+        <legend>관심사</legend>
+        <label> <input type="checkbox" name="hb" value="여행" />여행 </label>
+        <label> <input type="checkbox" name="hb" value="패션" />패션 </label>
+        <label> <input type="checkbox" name="hb" value="음식" />음식 </label>
+      </fieldset>
+      <br />
+      <button>회원가입</button>
+    </form>
+  </body>
+</html>

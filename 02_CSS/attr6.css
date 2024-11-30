@@ -1,0 +1,137 @@
+.img-box{
+    width: 400px;
+    height: 250px;
+    background-color: orange;
+}
+
+.img-box img{
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    border: 1px solid skyblue;
+}
+
+.img-box img:hover{
+    /* transform */
+    /* 1. skew: 기울이기 함수
+    - skew(x_deg, y_deg), skewX(deg), skewY(deg)
+
+    */
+
+    transform: skewX(30deg);
+    transform: skewY(30deg);
+
+    /* scale: 크기조절함수 */
+    /* 
+    -scale(숫자,숫자). scaleX(배수), scaleY(배수)
+    
+    */
+    transform: scaleX(2);
+    transform: scaleX(0.7);
+    transform: scale(1.5,0.8);
+
+    /* translate: 이동함수 */
+    transform: translateX(100px);
+    transform: translateY(100px);
+    transform: translate(100px,50px);
+
+    /* rotate 회전함수 */
+    transform: rotate(45deg);
+    transform: perspective(200px) rotateX(45deg);
+    transform: perspective(400px) rotateY(180deg);
+
+    backface-visibility: hidden;
+    /* transform: perspective(400px) translate() scale() rotate() skew(); */
+    transform: translateX(100px) scaleX(1.7);
+}
+
+.box{
+    width: 100px;
+    height: 100px;
+    display: inline-block;
+    background-color: #000;
+}
+
+.box1:hover{
+    background-color: pink;
+    width: 120px;
+    height: 120px;
+    transition-duration: 1s;
+    transition-timing-function: ease;
+    transition-delay: 2s;
+}
+
+.box2:hover{
+    background-color: skyblue;
+    transform: translateX(100px) scaleX(2);
+    /* 속성 듀레이션 타이밍펑션 딜레이 */
+    transition: trnasform 1s ease-in-out 2s;
+
+}
+
+.box3{
+    transition: .6s;
+
+}
+.box3:hover{
+    /* opacity: 0; */
+
+    /* visibility, display 같은 속성값들이 중간값을 가지지 않는 경우 transition이 적용안됨 */
+    visibility: hidden;
+}
+
+
+/* 가운데 정렬방법 */
+.outer{
+    width: 300px;
+    height: 300px;
+    background-color: aquamarine;
+}
+
+.outer .inner{
+    width: 100px;
+    height: 100px;
+    background-color: pink;
+}
+
+/* 베스트방법 */
+.outer1{
+    display: flex;
+    /* 교차축 정열 */
+    justify-content: center;
+    align-items: center;
+}
+
+.outer1 > .inner1{
+
+}
+
+.outer2{
+    position: relative;
+}
+
+.outer2 > .inner2{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.outer3{
+    position: relative;
+}
+
+.outer3 > .inner3{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    
+}
+
+/* 
+flex
+position, trnasform
+*/

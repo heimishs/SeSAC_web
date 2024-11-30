@@ -1,0 +1,185 @@
+
+/* 블록은 마진을 상쇄함 */
+/* 인라인블록은 마진을 더함 */
+.d-block{
+    display: block;
+    background-color: antiquewhite;
+    border: 1px solid black;
+    width: 100px;
+    height: 100px;
+    font-size: 14px;
+    padding: 10px;
+    margin: 10px;
+}
+.d-inline{
+    display: inline;
+    background-color: skyblue;
+    width: 100px;
+    height: 100px;
+    padding: 10px;
+    margin: 10px;
+
+}
+.d-inline-block{
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    font-size: 12pxs;
+    background-color: thistle;
+    padding: 10px;
+    margin: 10px;
+}
+
+.parent{
+    width: 500px;
+    height: 250px;
+    background-color: mediumspringgreen;
+}
+
+.parent > .min{
+    min-width: 400px;
+    height: 100px;
+    background-color: orange;
+}
+
+.parent > .max{
+    max-width: 400px;
+    height: 100px;
+    background-color: burlywood;
+}
+
+/* 단위확인 */
+.box{
+    background-color: beige;
+    border: 1px solid #000;
+}
+
+.box-px{
+    width: 50px;
+    height: 50px;
+
+}
+
+.box-view{
+    width: 50vw;
+    height: 50vh;
+}
+
+.box-per{
+    width: 50%;
+    height: 50%;
+}
+
+html{
+    font-size: 20px;
+}
+
+.rem{
+    font-size: 2rem;
+}
+
+.em{
+    font-size: 2em;
+}
+
+.square{
+    width: 100px;
+    height: 100px;
+    border: 1px solid gray;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.border{
+    
+    border: 1px solid #000;
+    border-color: blue;
+    border-style: dotted;
+    border-width: 5px;
+    border-left: 2px dashed greenyellow;
+    border-top-style: solid;
+}
+
+.rounded{
+    border-radius: 10%;
+    border-radius: 5px 10px 20px 40px;
+    border-radius: 5px 20px 50px;
+    border-radius: 5px 50px;
+}
+
+.box-sizeing{
+    border: 15px solid red;
+    padding: 20px;
+    background-color: palegreen;
+}
+
+.border-box{
+    box-sizing: border-box;
+}
+
+.content-box{
+    box-sizing: content-box;
+}
+
+
+.d-none {
+    /* display: none; */
+    background-color: red;
+    }
+    .invisible {
+    /* visibility: hidden; */
+    background-color: orangered;
+    }
+    .opacity-0 {
+    /* opacity: 0; */
+    background-color: tomato;
+    }
+
+    .boxs{
+        width: 100px;
+        height: 100px;
+        background-color: pink;
+        display: inline-block;
+        border: 1px solid #000;
+    }
+
+    .boxex1{
+        border-width: 15px;
+    }
+    .boxex2{
+        border-style: dashed;
+    }
+    .boxex3{
+        border-color: yellow;
+    }
+    .boxex4{
+        border-top-style: dashed;
+        border-left-style:dotted;
+        border-right-style:solid;
+        border-bottom-style:outset;
+    }
+
+    .boxr{
+        border-radius: 15px 20px 30px 50px;
+    }
+
+    .square img[alt="푸"]{
+        width: 200px;
+    }
+
+    .overflow-hidden{
+        overflow: hidden;
+    }
+
+    .overflow-auto{
+        overflow: auto;
+    }
+    .overflow-scroll{
+        overflow: scroll;
+    }
+    .overflow-visible{
+        overflow: visible;
+        /* overflow-x: hidden;
+        overflow-y: auto; */
+        overflow: hidden auto;
+    }

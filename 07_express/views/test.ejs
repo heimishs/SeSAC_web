@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/static/css/test.css" />
+    <%- include("./includes/head") %>
+  </head>
+  <body>
+    <%- include("./includes/header.ejs") %>
+    <h1>테스트입니다</h1>
+    <% for(let i = 1; i <= 5; i++){ %>
+
+    <div>안녕하세요</div>
+
+    <!--<div>숫자: <%=i%></div>-->
+
+    <img src="/static/img/pooh<%=i%>.png" alt="pooh<%=i%>" width="500px" />
+
+    <% } %>
+
+    <!-- <img width="500" src="/static/img/owl.png" alt="오울" /> -->
+  </body>
+</html>

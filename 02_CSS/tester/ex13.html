@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>애벌레 실습</title>
+    <style>
+        .grass{
+            position: relative;
+            width: 1000px;
+            height: 590px;
+            background-image: url('../img/grass.png');
+            background-size: 700px 250px;
+            background-repeat: repeat-x;
+            background-position: bottom;
+            z-index: 5;
+        }
+
+        .bug_one{
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            top: 30px;
+            left: 25px;
+            background-color: #fff;
+            border-radius: 50%;
+        }
+
+        .bug_one2{
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            top: 15px;
+            left: 0px;
+            background-color: #000;
+            border-radius: 50%;
+        }
+
+        .bug{
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background-color: skyblue;
+        }
+
+        .bug1{
+            position: relative;
+            top: 210px;
+            left: 300px;
+            background-color: #0000A6;
+            
+        }
+        .bug2{
+            position: relative;
+            top: 80px;
+            left: 70px;
+            background-color: #243DCE;
+        }
+        .bug3{
+            position: relative;
+            top: 0px;
+            left: 120px;
+            background-color: #3476E7;
+        }
+        .bug4{
+            position: relative;
+            top: -70px;
+            left: 150px;
+            background-color: #2F92E9;
+            z-index: 1;
+        }
+        .bug5{
+            position: relative;
+            top: -140px;
+            left: 220px;
+            background-color: #8CBFFD;
+            z-index: 10;
+        }
+    </style>
+</head>
+<body>
+    
+        <div class="bug bug1">
+            <div class="bug_one">
+                <div class="bug_one2"></div>
+            </div>
+            <div class="bug bug2"></div>
+            <div class="bug bug3"></div>
+            <div class="bug bug4"></div>
+            <div class="bug bug5"></div>
+        </div>
+        
+        <div class="grass"></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>건의사항을 적어주세요</title>
+    <style>
+
+        h1:hover{
+            background-color: black;
+            color: #fff;
+        }
+
+        textarea:focus{
+            background-color:lightpink;
+        }
+
+        .btn{
+            width: 500px;
+            text-align: right;
+        }
+
+        
+
+    </style>
+</head>
+<body>
+    <form>
+        <h1>건의 사항을 적어주세요!</h1>
+        <textarea cols="70" rows="10" placeholder="건의 사항"></textarea>
+        <br />
+        <label><input name="cheak_color" type="checkbox" />빨강</label>
+        <label><input name="cheak_color" type="checkbox" />파랑</label>
+        <label><input name="cheak_color" type="checkbox" />노랑</label>
+        <div class="btn">
+            <input type="submit">
+        </div>
+        
+    </form>
+</body>
+</html>

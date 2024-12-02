@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      label {
+        display: inline-block;
+      }
+
+      label span {
+        width: 90px;
+      }
+
+      .success {
+        color: blue;
+        font-weight: bold;
+      }
+
+      .error {
+        color: red;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <form name="login">
+      <label><span>아이디</span><input type="text" name="userId" /></label>
+      <br />
+      <label
+        ><span>비밀번호</span><input type="password" name="userPw"
+      /></label>
+      <br />
+      <button type="button" onclick="clickLogin()">로그인1</button>
+      <button type="button" onclick="clickLogin2()">로그인2</button>
+    </form>
+    <div class="result"></div>
+    <script>
+      const result = document.querySelector(".result");
+      function clickLogin() {
+        const form = document.forms["login"];
+        const data = {
+          userId: form.userId.value,
+          userPw: form.userPw.value,
+        };
+
+        console.log(form.userId.checkValidity());
+        if (!form.userId.checkValidity() || !form.userPw.checkValidity()) {
+          result.textContent = "아이디와 비밀번호는 필수값입니다!";
+          return;
+        }
+      }
+      async function clickLogin2() {}
+    </script>
+  </body>
+</html>

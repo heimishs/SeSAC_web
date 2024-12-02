@@ -5,6 +5,10 @@ exports.main = (req, res) => {
 };
 
 exports.getVisitors = (req, res) => {
-  console.log(Visitor.getVisitors());
-  res.render("visitor", { data: Visitor.getVisitors() });
+  // console.log(Visitor.getVisitors());
+  // res.render("visitor", { data: Visitor.getVisitors() }); DB 연결전
+  Visitor.getVisitors((result) => {
+    console.log(result);
+    res.render("visitor", { data: result });
+  });
 };

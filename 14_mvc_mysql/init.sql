@@ -32,3 +32,10 @@ SELECT * FROM mysql.user;
 
 SHOW GRANTS FOR 'user'@'%';
 
+SELECT * FROM visitor WHERE id = 1;
+
+SELECT * FROM visitor;
+
+DELETE FROM visitor WHERE id=5;
+
+UPDATE visitor SET name="qqqq", comment="ffaa" WHERE id=6

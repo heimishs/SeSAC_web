@@ -9,7 +9,7 @@ router.post("/user/signup", controller.signup_Add);
 router.get("/user/signin", controller.signin);
 router.post("/user/signin", controller.signin_auth);
 router.get("/user/profile/:id", controller.profile);
-router.get("/user/profile/edit", controller.profile_edit);
-router.get("/user/profile/delete", controller.profile_delete);
+router.post("/user/profile/edit", controller.profile_edit);
+router.post("/user/profile/delete", controller.profile_delete);
 
 module.exports = router;

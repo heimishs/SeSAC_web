@@ -32,8 +32,6 @@ exports.signin = (data, cb) => {
         throw err;
       }
 
-      console.log("DB응답", rows);
-
       cb(rows[0]);
     }
   );
@@ -41,7 +39,6 @@ exports.signin = (data, cb) => {
 
 // 유저 정보가져오기
 exports.profile = (data, cb) => {
-  console.log("db", data);
   conn.query(
     `SELECT userid, pw, name FROM user WHERE userid ="${data}"`,
     (err, rows) => {
@@ -49,9 +46,29 @@ exports.profile = (data, cb) => {
         throw err;
       }
 
-      console.log("DB응답", rows);
-
       cb(rows[0]);
     }
   );
+};
+
+exports.profile_edit = (data, cb) => {
+  conn.query(
+    `UPDATE user SET name="${data.name}", pw="${data.pw}" WHERE userid="${data.userid}"`,
+    (err, rows) => {
+      if (err) {
+        throw err;
+      }
+      cb();
+    }
+  );
+};
+
+exports.profile_delete = (id, cb) => {
+  console.log("db", id);
+  conn.query(`DELETE from user WHERE userid="${id}"`, (err, rows) => {
+    if (err) {
+      throw err;
+    }
+    cb();
+  });
 };

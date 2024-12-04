@@ -30,3 +30,8 @@ DESC user;
 
 -- user 테이블 데이터 조회
 SELECT * FROM user;
+
+
+create user 'user'@'%' identified by 'xzrjs1589';
+grant all privileges on *.* to 'user'@'%';
+ALTER USER 'user'@'%' IDENTIFIED WITH mysql_native_password BY 'xzrjs1589';

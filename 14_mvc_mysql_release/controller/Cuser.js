@@ -14,7 +14,7 @@ exports.signup = (req, res) => {
 exports.signup_Add = (req, res) => {
   console.log(req.body);
   User.signup(req.body, (result) => {
-    console.log(result);
+    res.send("");
   });
 };
 
@@ -31,17 +31,21 @@ exports.signin_auth = (req, res) => {
 
 exports.profile = (req, res) => {
   // :id값
-  console.log(req.params.id);
   User.profile(req.params.id, (result) => {
-    console.log("가져온값", result);
     res.render("profile", result);
   });
 };
 
+// 수정처리
 exports.profile_edit = (req, res) => {
-  res.send("수정");
+  User.profile_edit(req.body, () => {
+    res.send("");
+  });
 };
 
 exports.profile_delete = (req, res) => {
-  res.send("수정");
+  console.log(req.body.userid);
+  User.profile_delete(req.body.userid, () => {
+    res.send("");
+  });
 };

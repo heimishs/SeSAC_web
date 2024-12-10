@@ -4,17 +4,29 @@ const cookieParser = require("cookie-parser");
 const app = express();
 const PORT = 8080;
 
+// 암호화 안된 쿠키로사용
+app.use(cookieParser());
+
 app.set("view engine", "ejs");
 
-// TODO 쿠기 미들웨어 설정
+// 오늘 하루만 유지하기 위해 다음날 00시 까지로 지정
+const now = new Date();
+const midnight = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1); // 다음날 00:00
+// 쿠키설정값
+const cookieConfig = {
+  expires: midnight,
+  httpOnly: true,
+  signed: false,
+};
+
 app.get("/", (req, res) => {
-  // 쿠키값 가져오기 및 인덱스에 보내기
-  // res.render("index",{popup:쿠키값})
-  res.render("index");
+  let localcookie = { popup: req.cookies.popup };
+  res.render("index", localcookie);
 });
 
-app.post("/set-cookie", (req, res) => {
-  res.send("쿠키 생성 성공");
+app.post("/setCookie", (req, res) => {
+  res.cookie("popup", true, cookieConfig);
+  res.send(res.cookies);
 });
 
 app.listen(PORT, () => {

@@ -4,10 +4,35 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>사용자 정보</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   </head>
   <body>
     <div>
-      <form action=""></form>
+      <h1>사용자 정보</h1>
+      <% if(islogin){ %>
+      <p><%=name%>님 환영합니다.</p>
+      <%} else{%>
+      <p>로그인을 해주십시오</p>
+      <%}%> <% if(islogin){ %>
+      <button type="button" onclick="logout()">로그아웃</button>
+      <%} else{%>
+      <a href="/login">로그인</a>
+      <a href="/signup">회원가입</a>
+      <%}%>
     </div>
+    <script>
+      async function logout() {
+        const ss_destroy = await axios({
+          method: "post",
+          url: "/logout",
+          data: {},
+        });
+
+        // 삭제성공 시 새로고침
+        if (ss_destroy.data) {
+          document.location.reload();
+        }
+      }
+    </script>
   </body>
 </html>

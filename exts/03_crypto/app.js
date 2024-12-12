@@ -10,6 +10,18 @@ app.use("/static", express.static(__dirname + "/static"));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
+app.use(
+  session({
+    secret: process.env.SS_SECRET, //필수 env에서 관리할것
+    resave: false,
+    saveUninitialized: false,
+    cookie: {
+      httpOnly: true,
+      maxAge: 10 * 60 * 1000,
+    },
+  })
+);
+
 // 라우터 연결
 const indexRouter = require("./routers/index");
 app.use("/", indexRouter);

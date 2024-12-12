@@ -50,7 +50,7 @@ exports.getVisitor = async (req, res) => {
         id: req.params.id,
       },
     });
-    console.log("findOne >> ", result);
+    console.log("findOne >> ", result[0].user);
     res.send(result);
     /* 
     visitor {

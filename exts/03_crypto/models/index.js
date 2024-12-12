@@ -12,6 +12,7 @@ sequelize = new Sequelize(
   config
 );
 
+db.User = require("./user")(sequelize, Sequelize);
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 

@@ -21,8 +21,22 @@ import EventAdd from "./components/practice/EventAdd";
 import ChangeObj from "./components/practice/ChangeObj";
 import PororoObj from "./components/practice/PororoObj";
 import EventFult from "./components/EventFult";
+import EntirePractice from "./components/practice/EntirePractice";
+import PropsMap from "./components/PropsMap";
+import PropsMap2 from "./components/PropsMap2";
+import Alphabet from "./components/Alphabet";
+import MapEx from "./components/practice/Mapex";
+import MapExTow from "./components/practice/MapExTow";
+import MapPractice2 from "./components/practice/MapParctice2";
 
 function App() {
+  const arr = [
+    { name: "peach", krPrice: 10000, number: 5 },
+    { name: "strawberry", krPrice: 15000, number: 1 },
+    { name: "pear", krPrice: 5000, number: 3 },
+    { name: "apple", krPrice: 20000, number: 15 },
+  ];
+
   return (
     <div>
       {/* <h2> props 사용</h2> */}
@@ -58,7 +72,14 @@ function App() {
       {/* <TextEvent /> */}
       {/* <EventAdd /> */}
       {/* <PororoObj /> */}
-      <EventFult />
+      {/* <EventFult /> */}
+      {/* <EntirePractice /> */}
+      {/* <PropsMap arr={arr} />
+      <PropsMap2 arr={arr} /> */}
+      {/* <Alphabet /> */}
+      {/* <MapEx /> */}
+      {/* <MapExTow /> */}
+      <MapPractice2 />
     </div>
   );
 }

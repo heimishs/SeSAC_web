@@ -1,0 +1,84 @@
+$color-red: #d04848;
+$color-orange: #f3b95f;
+$color-yellow: #fde767;
+$color-green: #96ceb4;
+$color-blue: #6895d2;
+
+$boxShadow: 2px 2px 6px #6868684b;
+
+@mixin box {
+  width: 100px;
+  height: 100px;
+  border: 1px solid black;
+  display: inline-block;
+  box-sizing: border-box;
+}
+
+@mixin circle($color, $opacity) {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 1px solid #000;
+  display: inline-block;
+  background-color: $color;
+  opacity: $opacity;
+}
+
+@mixin box2($bgColor: $color-red, $fontSize: 15px, $color: gray) {
+  @include box;
+  background-color: $bgColor;
+  line-height: 100px;
+  text-align: center;
+  font-size: $fontSize;
+  color: $color;
+
+  @if $bgColor == $color-red {
+    border-radius: 50%;
+  } @else if $color == black {
+    border-radius: 25%;
+  } @else {
+    border-radius: 0;
+  }
+}
+
+@mixin card($number) {
+  width: 300px;
+  height: 400px;
+  background-position: center;
+  background-size: contain;
+  background-color: #8277f4;
+  background-repeat: no-repeat;
+  border-radius: 20px;
+  box-shadow: $boxShadow;
+  background-image: url("../assets/practice" + $number + ".png");
+}
+
+@mixin eye {
+  position: relative;
+  border-radius: 50%;
+}
+
+@mixin one($vlueX, $vlueY) {
+  position: relative;
+  animation: keyframes 2s infinite;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+
+  @keyframes keyframes {
+    0% {
+      transform: translateX(0px);
+    }
+    25% {
+      transform: translateX($vlueX);
+    }
+    50% {
+      transform: translateX($vlueX) translateY($vlueY);
+    }
+    75% {
+      transform: translateX(0px) translateY($vlueY);
+    }
+    100% {
+    }
+  }
+}

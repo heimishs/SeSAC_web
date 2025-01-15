@@ -1,0 +1,31 @@
+@import "_util";
+
+.box {
+  width: 500px;
+  height: 500px;
+  border: 1px solid #000;
+
+  @for $i from 1 through 3 {
+    // #{}보간
+    // 문자 사이에 변수를 넣거나, 연산이 아닌 곳에 값을 넣을 때 사용
+    & .one:nth-child(#{$i}) {
+      @include one($i, 50px);
+      background-color: $color-red;
+      // width: (80 + 20px * $i);
+      // border: 1px solid $color-blue;
+    }
+  }
+
+  //   & .one1 {
+  //     @include one(50px, 50px);
+  //     background-color: $color-red;
+  //   }
+  //   & .one2 {
+  //     @include one(150px, 150px);
+  //     background-color: $color-yellow;
+  //   }
+  //   & .one3 {
+  //     @include one(200px, 200px);
+  //     background-color: $color-green;
+  //   }
+}

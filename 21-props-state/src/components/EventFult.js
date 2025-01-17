@@ -2,27 +2,32 @@ import { useState } from "react";
 
 export default function EventFult() {
   const [fult, setFult] = useState("./peach.jpg");
-  const [color, setColor] = useState("black");
-  const [textColor, setTextColor] = useState("black");
-  const [text, setText] = useState("");
-  let style = {
-    backgroundColor: "black",
-    display: "inlineBlock",
-    padding: "10px",
-    color: "#fff",
-  };
+  const [backgroundColor, setBackgroundColor] = useState("black");
+  const [textColor, setTextColor] = useState("white");
+  const [text, setText] = useState("text");
 
   const changeFult = (e) => {
     const selectBox = e.target;
-    let selectValue = selectBox.options[selectBox.selectedIndex].value;
+    const selectValue = selectBox.options[selectBox.selectedIndex].value;
     setFult(`./${selectValue}.jpg`);
   };
 
-  const changeColor = (e) => {
+  const changeBackgroundColor = (e) => {
     const selectBox = e.target;
-    let selectValue = selectBox.options[selectBox.selectedIndex].value;
-    console.log(selectValue);
+    const selectValue = selectBox.options[selectBox.selectedIndex].value;
+    setBackgroundColor(selectValue);
   };
+
+  const changeTextColor = (e) => {
+    const selectBox = e.target;
+    const selectValue = selectBox.options[selectBox.selectedIndex].value;
+    setTextColor(selectValue);
+  };
+
+  const handleTextChange = (e) => {
+    setText(e.target.value);
+  };
+
   return (
     <div>
       <div style={{ textAlign: "center" }}>
@@ -37,7 +42,7 @@ export default function EventFult() {
         </label>
         <label>
           배경색:
-          <select onChange={changeColor}>
+          <select onChange={changeBackgroundColor}>
             <option value="black">검정</option>
             <option value="red">빨강</option>
             <option value="white">하양</option>
@@ -47,7 +52,7 @@ export default function EventFult() {
         </label>
         <label>
           글자색:
-          <select>
+          <select onChange={changeTextColor}>
             <option value="black">검정</option>
             <option value="red">빨강</option>
             <option value="white">하양</option>
@@ -58,14 +63,23 @@ export default function EventFult() {
         <br />
         <label>
           내용:
-          <input type="text" />
+          <input type="text" onChange={handleTextChange} />
         </label>
         <br />
-        <img style={{ width: "300px" }} src={fult} />
+        <img style={{ width: "300px" }} src={fult} alt="selected fruit" />
         <br />
         <br />
         <br />
-        <span style={style}>text</span>
+        <span
+          style={{
+            backgroundColor: backgroundColor,
+            color: textColor,
+            display: "inline-block",
+            padding: "10px",
+          }}
+        >
+          {text}
+        </span>
       </div>
     </div>
   );

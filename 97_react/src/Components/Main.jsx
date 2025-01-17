@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 export default function Main() {
   return (
     <>
-      <div>
+      <div className="gnb">
         <h2>ReactRouter 실습</h2>
         <nav>
           <ul>

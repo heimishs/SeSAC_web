@@ -58,27 +58,64 @@ $boxShadow: 2px 2px 6px #6868684b;
   border-radius: 50%;
 }
 
-@mixin one($vlueX, $vlueY) {
-  position: relative;
-  animation: keyframes 2s infinite;
+@mixin one($aniName) {
   width: 50px;
   height: 50px;
+  position: relative;
+  animation: $aniName 2s infinite;
   border-radius: 50%;
+}
 
-  @keyframes keyframes {
-    0% {
-      transform: translateX(0px);
-    }
-    25% {
-      transform: translateX($vlueX);
-    }
-    50% {
-      transform: translateX($vlueX) translateY($vlueY);
-    }
-    75% {
-      transform: translateX(0px) translateY($vlueY);
-    }
-    100% {
-    }
+@keyframes moveOne1 {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(100px);
+  }
+  50% {
+    transform: translateX(100px) translateY(100px);
+  }
+  75% {
+    transform: translateX(0) translateY(100px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes moveOne2 {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(150px);
+  }
+  50% {
+    transform: translateX(150px) translateY(150px);
+  }
+  75% {
+    transform: translateX(0) translateY(150px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes moveOne3 {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(200px);
+  }
+  50% {
+    transform: translateX(200px) translateY(200px);
+  }
+  75% {
+    transform: translateX(0) translateY(200px);
+  }
+  100% {
+    transform: translateX(0);
   }
 }

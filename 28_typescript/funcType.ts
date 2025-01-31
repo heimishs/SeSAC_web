@@ -58,5 +58,3 @@ function add(x: any, y: any) {
 
 console.log(add(1, 2));
 console.log(add("1", "2"));
-
-// 제네릭: 함수를 호출할때 데이터 타입을 지정할 수 있는 문법

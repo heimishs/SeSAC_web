@@ -131,6 +131,20 @@
       color: #fff;
       font-weight: bold;
     }
+
+    /* DM */
+    #dm-select {
+      min-width: 80px;
+      margin-right: 5px;
+      border: none;
+      border-radius: 3px;
+      text-align: center;
+      outline: none;
+    }
+
+    .speech.other.dm > .msg-box {
+      background-color: #ffffff75;
+    }
   </style>
   <body>
     <div class="entry-box">
@@ -155,6 +169,7 @@
         <div>
           <form id="msg-form" class="msg-form">
             <div class="inputBox">
+              <select id="dm-select"></select>
               <input type="text" />
               <button>전송</button>
             </div>
@@ -172,11 +187,11 @@
       const container = document.querySelector(".wrap");
       const entryBox = document.querySelector(".entry-box");
       const nickInput = document.querySelector("#nickname");
+      const select = document.querySelector("#dm-select");
 
       let myNick; // 입장 성공했을때 나의 닉네임 저장할 변수
       // 닉네임 사용 1
       function join() {
-        console.log("click");
         socket.emit("checkNick", nickInput.value);
       }
 
@@ -205,7 +220,13 @@
         if (input.value.trim() === "") return;
 
         // 4-1 버튼을 눌렀을때 메세지를 서버에게 전달
-        socket.emit("send", input.value);
+        // (dm 일때 객체정보 전달)
+        const sendData = {
+          myNick: myNick,
+          dm: select.value, //채팅을 보내고자 하는 클라이언트의 소켓 id
+          msg: input.value, // 메세지 내용
+        };
+        socket.emit("send", sendData);
         input.value = "";
       });
 
@@ -224,6 +245,14 @@
         span.classList.add("msg-box");
         div.classList.add("speech");
 
+        console.log(data);
+        if (data.isDm) {
+          // DM일 경우에 말풍선 맨 앞에 [귓속말] 단어 보이도록
+          span.innerText = "[귓속말] " + data.message;
+        } else {
+          span.innerText = data.message;
+        }
+
         if (data.id === myNick) {
           // 내가 보낸 메세지
           div.classList.add("me");
@@ -240,6 +269,20 @@
 
         chatContainer.append(div);
         chatContainer.scrollTop = chatContainer.scrollHeight;
+      });
+
+      socket.on("updateNicks", (nickInfo) => {
+        console.log("nickInfo", nickInfo); //{socket:id : nickname}
+
+        let = option = `<option value="all">전체</option>`;
+        for (const key in nickInfo) {
+          // console.log("key:", key);
+          // console.log("value:", nickInfo[key]);
+          option += `<option value="${key}">${nickInfo[key]}</option>`;
+        }
+
+        select.innerHTML = option;
+        console.log(option);
       });
     </script>
   </body>

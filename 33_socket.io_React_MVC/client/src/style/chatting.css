@@ -1,0 +1,130 @@
+html,
+body {
+  padding: 0px;
+  margin: 0px;
+  background-color: #e0e0e0;
+}
+
+p {
+  margin: 0px;
+}
+
+header {
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  border-bottom: 1px solid #48b179;
+  text-align: center;
+  font-weight: bold;
+}
+
+.notice {
+  text-align: center;
+  margin: 20px 0px;
+}
+
+.wrap {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  min-height: 500px;
+  margin: 0 auto;
+  border-radius: 10px;
+  background-color: #fff;
+}
+
+.wrap header {
+  width: 100%;
+  height: 60px;
+}
+
+.wrap main {
+  width: 100%;
+  min-height: 400px;
+}
+
+.speech.me {
+  display: inline-block;
+  width: 100%;
+  text-align: right;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.speech.me > span {
+  display: inline-block;
+  padding: 10px;
+  background-color: #48b179;
+  box-sizing: border-box;
+  border-radius: 10px;
+  color: #fff;
+}
+
+.speech.other {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  text-align: left;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.speech.other > .nickname {
+  position: absolute;
+  top: -20px;
+  left: 15px;
+  display: inline-block;
+  padding: 10px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+.speech.other > .msg-box {
+  padding: 10px;
+  background-color: #d8d8d8;
+  box-sizing: border-box;
+  border-radius: 10px;
+}
+
+.inputBox {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding: 10px;
+  box-sizing: border-box;
+}
+.inputBox input {
+  width: 100%;
+  border: none;
+  background-color: #e2e2e2;
+  border-radius: 20px;
+  padding: 0px 20px;
+  box-sizing: border-box;
+}
+
+.inputBox button {
+  width: 60px;
+  height: 40px;
+  background-color: #48b179;
+  border-radius: 5px;
+  border: none;
+  margin-left: 10px;
+  color: #fff;
+  font-weight: bold;
+}
+
+/* DM */
+#dm-select {
+  min-width: 80px;
+  margin-right: 5px;
+  border: none;
+  border-radius: 3px;
+  text-align: center;
+  outline: none;
+}
+
+.speech.other.dm > .msg-box {
+  background-color: #ffffff75;
+}

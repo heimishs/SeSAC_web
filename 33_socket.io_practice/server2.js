@@ -43,9 +43,31 @@ io.on("connection", (socket) => {
   // socket.broadcast.emit("notice", `${socket.id}님이 입장하셨습니다`);
 
   //   4-2 메세지를 하나의 클라이언트에게 받고 전체 클라이언트에게 전송해주는 역할
-  socket.on("send", (msg) => {
+  socket.on("send", (msgData) => {
+    // msgData:{myNick, dm, msg}
     // console.log(`${socket.id}:${msg}`);
-    io.emit("message", { id: nickInfo[socket.id], message: msg });
+
+    console.log(msgData);
+
+    if (msgData.dm === "all") {
+      // 전체에게 메세지 보내기
+      io.emit("message", { id: msgData.myNick, message: msgData.msg });
+    } else {
+      let dmSocketId = msgData.dm;
+      // 특정 클라이언트 에게만 메세지 보내기 (나를 제외함)
+      io.to(dmSocketId).emit("message", {
+        id: msgData.myNick,
+        message: msgData.msg,
+        isDm: true,
+
+        // 나에게만 보내기
+      });
+      socket.emit("message", {
+        id: msgData.myNick,
+        message: msgData.msg,
+        isDm: true,
+      });
+    }
   });
 
   // 클라이언트 퇴장공고
